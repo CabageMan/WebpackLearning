@@ -11,7 +11,7 @@ function component() {
     const image = new Image();
     const button = document.createElement('button');
 
-    element.innerHTML = _.join(['Hello', ' ', 'webpack'], ' ');
+    element.innerHTML = _.join(['Hello', ' ', 'webpack!'], ' ');
     element.classList.add('red');
 
     image.src = octoCat;
