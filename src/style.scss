@@ -1,7 +1,28 @@
 // Variables
 $redColor: red;
 
+@font-face {    
+    src: url('./CircularStd-Black.woff2') format('woff2'),
+         url('./CircularStd-Black.woff') format('woff');
+    font: {
+        family: 'BlackFont';
+        weight: 300;
+        style: normal;
+    }
+}
+
 .red {
     color: $redColor;
+    margin: {
+        left: 150px;
+        bottom: 30px;
+    }
+    padding: {
+        bottom: 240px;
+    }
     background: url('./icons8-github.png');
+    font: {
+        family: 'BlackFont';
+        size: 36px;
+    }
 }
