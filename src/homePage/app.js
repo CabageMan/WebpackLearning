@@ -10,7 +10,7 @@ function component() {
     const element = document.createElement('div');
     const image = new Image();
     const printButton = document.createElement('button');
-    const firstButton = document.createElement('button');
+    
     const secondButton = document.createElement('button');
     const thirdButton = document.createElement('button');
 
@@ -22,7 +22,7 @@ function component() {
     printButton.innerHTML = 'Tap to print into console';
     printButton.onclick = print;
 
-    firstButton.innerHTML = 'Go to first page';
+    
 
     secondButton.innerHTML = 'Go to second page';
 
@@ -30,11 +30,31 @@ function component() {
 
     element.appendChild(image);
     element.appendChild(printButton);
-    element.appendChild(firstButton);
+    element.appendChild(createFirstButton());
     element.appendChild(secondButton);
     element.appendChild(thirdButton);
 
     return element;
 }
+
+function createFirstButton() {
+    const button = document.createElement('button');
+    button.innerHTML = 'Go to First Page';
+    button.onclick = onFirstButtonClick;
+    return button;
+}
+
+function onFirstButtonClick() {
+    window.location = /about/;
+}
+
+// function createA() {
+//     const link = document.createElement('a');
+//     link.title = 'Go to About';
+//     link.innerHTML = 'Go to About';
+//     link.href = "/about/";
+//     link.classList.add('button');
+//     return link;
+// }
 
 document.body.appendChild(component());

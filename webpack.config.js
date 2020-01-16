@@ -8,7 +8,6 @@ module.exports = {
     entry: {
         app: './src/homePage/app.js',
         print: './src/homePage/print.js',
-        firstPage: './src/firstPage/firstPage.js',
     },
     devtool: 'inline-source-map',
     devServer: {
