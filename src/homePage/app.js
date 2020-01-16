@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import print from './print.js';
-
-
+import createIssueForm from './formBlock';
 import styles from './style.scss';
 import octoCat from './icons8-github.png';
 
@@ -21,8 +20,6 @@ function component() {
 
     printButton.innerHTML = 'Tap to print into console';
     printButton.onclick = print;
-
-    
 
     secondButton.innerHTML = 'Go to second page';
 
@@ -57,4 +54,5 @@ function onFirstButtonClick() {
 //     return link;
 // }
 
-document.body.appendChild(component());
+// document.body.appendChild(component());
+document.body.appendChild(createIssueForm());

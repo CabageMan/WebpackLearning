@@ -8,6 +8,7 @@ module.exports = {
     entry: {
         app: './src/homePage/app.js',
         print: './src/homePage/print.js',
+        issueForm: './src/homePage/formBlock.js',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -16,7 +17,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Output Management',
+            title: 'Issue Tracker',
         }),
     ],
     output: {

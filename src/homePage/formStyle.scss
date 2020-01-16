@@ -1,0 +1,71 @@
+// Variables
+$formBorderColor: #ccc;
+$formBackgroundColor: #EEEEEE;
+$buttonColor: #3379B6;
+$buttonTextColor:  #ffffff;
+
+
+// Mixins
+@mixin middle-text {
+    font-size: 18px!important;
+}
+
+@mixin large-text {
+    font-size: 36px!important;
+  }
+
+.form {
+    border-radius: 8px;
+    background-color: $formBackgroundColor;
+    margin: 30px;
+    padding: 15px;
+
+    &-element {
+      margin: 0;
+      padding: 10px;
+      display: block;
+      width: 100%;
+    }
+    &-title {
+      @include large-text;
+    }
+    &-input {
+      display: block;
+      width: 100%;
+      border: 1px solid $formBorderColor;
+      border-radius: 5px;
+      height: 40px;
+      box-sizing: border-box;
+    }
+
+    p {
+      @include large-text();
+      padding: 10px;
+    }
+}
+
+.button {
+    @include middle-text;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    text: {
+      decoration: none;
+      align: center;
+    }
+    cursor: pointer;
+    white-space: nowrap;
+  
+    color: $buttonTextColor;
+    background-color: $buttonColor;
+    opacity: 0.60;
+  
+    margin-left: 9px;
+    padding: 0px 24px;
+    border-radius: 5px;
+    height: 40px;
+  
+    &:hover {
+      opacity: 1.0;
+    }
+  }
