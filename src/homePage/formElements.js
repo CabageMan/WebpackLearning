@@ -1,4 +1,4 @@
-export const createTitledInput = (title, placeholder, inputID) => {
+export const createTitledInput = (title, placeholder, inputID, name) => {
     const textFieldContainer = document.createElement('div');
     const textFieldTitle = document.createElement('label');
     const textField = document.createElement('input');
@@ -6,6 +6,7 @@ export const createTitledInput = (title, placeholder, inputID) => {
     textFieldTitle.innerHTML = `<label class="form-title" for="${inputID}">${title}</label>`;
 
     textField.id = inputID;
+    textField.name = name;
     textField.type = 'text';
     textField.classList.add('form-input');
     textField.placeholder = placeholder;
@@ -17,7 +18,7 @@ export const createTitledInput = (title, placeholder, inputID) => {
     return textFieldContainer;
 };
 
-export const createTitledSelect = (title, selectID) => {
+export const createTitledSelect = (title, selectID, name) => {
     const selectContainer = document.createElement('div');
     const selectTitle = document.createElement('label');
     const selectInput = document.createElement('select');
@@ -35,6 +36,7 @@ export const createTitledSelect = (title, selectID) => {
     optionHigh.text = 'High';
 
     selectInput.id = selectID;
+    selectInput.name = name;
     selectInput.classList.add('form-input');
     selectInput.add(optionLow);
     selectInput.add(optionMedium);
@@ -46,8 +48,9 @@ export const createTitledSelect = (title, selectID) => {
     return selectContainer;
 };
 
-export const createSubmitButton = (title) => {
+export const createSubmitButton = (title, buttonID) => {
     const button = document.createElement('button');
+    button.id = `${buttonID}`;
     button.innerHTML = `${title}`;
     button.type = 'submit';
     button.classList.add('button');

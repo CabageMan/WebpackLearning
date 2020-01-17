@@ -1,8 +1,11 @@
+"use strict";
+
 import _ from 'lodash';
 import print from './print.js';
-import createIssueForm from './formBlock';
+import * as issueForm from './formBlock';
 import styles from './style.scss';
 import octoCat from './icons8-github.png';
+
 
 
 function component() {
@@ -55,4 +58,18 @@ function onFirstButtonClick() {
 // }
 
 // document.body.appendChild(component());
-document.body.appendChild(createIssueForm());
+function createIssueComponent() {
+    const element = document.createElement('div');
+    
+    element.innerHTML = '<h1 style="huge-text">JS Issue Tracker <small class="small-text" style="color: #939393;">for Webpack learning</small></h1>';
+    element.appendChild(issueForm.createIssueForm());
+
+    return element;
+}
+
+document.body.appendChild(createIssueComponent());
+
+document.getElementById("issueSubmitButton").addEventListener("click", function(event){
+    event.preventDefault();
+    issueForm.validateIssueForm();
+});
